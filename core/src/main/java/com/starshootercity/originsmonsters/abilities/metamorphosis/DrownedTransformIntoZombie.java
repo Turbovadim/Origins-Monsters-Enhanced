@@ -49,7 +49,7 @@ public class DrownedTransformIntoZombie implements VisibleAbility, Listener {
 
     private void switchToZombie(Player player) {
         player.getLocation().getWorld().playSound(player, Sound.ENTITY_ZOMBIE_CONVERTED_TO_DROWNED, SoundCategory.PLAYERS, 1, 1);
-        OriginSwapper.setOrigin(player, AddonLoader.originNameMap.get("zombie"), PlayerSwapOriginEvent.SwapReason.PLUGIN, false);
+        OriginSwapper.setOrigin(player, AddonLoader.getOrigin("zombie"), PlayerSwapOriginEvent.SwapReason.PLUGIN, false, "origin");
         player.sendMessage(Component.text("You have transformed into a zombie!")
                 .color(NamedTextColor.YELLOW));
     }

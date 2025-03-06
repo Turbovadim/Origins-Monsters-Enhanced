@@ -59,7 +59,7 @@ public class TransformIntoStray implements VisibleAbility, Listener {
 
     private void switchToStray(Player player) {
         player.getLocation().getWorld().playSound(player, Sound.ENTITY_SKELETON_CONVERTED_TO_STRAY, SoundCategory.PLAYERS, 1, 1);
-        OriginSwapper.setOrigin(player, AddonLoader.originNameMap.get("stray"), PlayerSwapOriginEvent.SwapReason.PLUGIN, false);
+        OriginSwapper.setOrigin(player, AddonLoader.getOrigin("stray"), PlayerSwapOriginEvent.SwapReason.PLUGIN, false, "origin");
         player.sendMessage(Component.text("You have transformed into a stray!")
                 .color(NamedTextColor.YELLOW));
     }

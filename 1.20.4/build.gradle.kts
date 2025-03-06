@@ -1,6 +1,7 @@
 plugins {
     id("java")
     id("io.papermc.paperweight.userdev")
+    kotlin("jvm")
 }
 
 repositories {
@@ -13,8 +14,12 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter")
     implementation(project(":version"))
     paperweight.paperDevBundle("1.20.4-R0.1-SNAPSHOT")
+    implementation(kotlin("stdlib-jdk8"))
 }
 
 tasks.test {
     useJUnitPlatform()
+}
+kotlin {
+    jvmToolchain(17)
 }

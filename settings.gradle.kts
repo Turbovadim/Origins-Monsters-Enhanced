@@ -1,4 +1,12 @@
-rootProject.name = "Origins-Monsters"
+pluginManagement {
+    plugins {
+        kotlin("jvm") version "2.1.10"
+    }
+}
+plugins {
+    id("org.gradle.toolchains.foojay-resolver-convention") version "0.8.0"
+}
+rootProject.name = "Origins-Monsters-Enhanced"
 include("core")
 include("version")
 include("1.20.6")
@@ -15,3 +23,4 @@ include("1.19.1")
 include("1.19")
 include("1.21")
 include("1.21.3")
+include("1.21.4")

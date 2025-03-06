@@ -49,7 +49,7 @@ public class TransformIntoSkeleton implements VisibleAbility, Listener {
 
     private void switchToSkeleton(Player player) {
         player.getLocation().getWorld().playSound(player, Sound.ENTITY_SKELETON_CONVERTED_TO_STRAY, SoundCategory.PLAYERS, 1, 1);
-        OriginSwapper.setOrigin(player, AddonLoader.originNameMap.get("skeleton"), PlayerSwapOriginEvent.SwapReason.PLUGIN, false);
+        OriginSwapper.setOrigin(player, AddonLoader.getOrigin("skeleton"), PlayerSwapOriginEvent.SwapReason.PLUGIN, false, "origin");
         player.sendMessage(Component.text("You have transformed into a skeleton!")
                 .color(NamedTextColor.YELLOW));
     }

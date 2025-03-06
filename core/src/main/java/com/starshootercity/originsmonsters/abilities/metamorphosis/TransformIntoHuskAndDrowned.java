@@ -52,7 +52,7 @@ public class TransformIntoHuskAndDrowned implements VisibleAbility, Listener {
 
     private void switchToHusk(Player player) {
         player.getLocation().getWorld().playSound(player, Sound.ENTITY_HUSK_CONVERTED_TO_ZOMBIE, SoundCategory.PLAYERS, 1, 1);
-        OriginSwapper.setOrigin(player, AddonLoader.originNameMap.get("husk"), PlayerSwapOriginEvent.SwapReason.PLUGIN, false);
+        OriginSwapper.setOrigin(player, AddonLoader.getOrigin("husk"), PlayerSwapOriginEvent.SwapReason.PLUGIN, false, "origin");
         player.sendMessage(Component.text("You have transformed into a husk!")
                 .color(NamedTextColor.YELLOW));
     }
@@ -79,7 +79,7 @@ public class TransformIntoHuskAndDrowned implements VisibleAbility, Listener {
     private void switchToDrowned(Player player) {
         player.getLocation().getWorld().playSound(player, Sound.ENTITY_ZOMBIE_CONVERTED_TO_DROWNED, SoundCategory.PLAYERS, 1, 1);
         MetamorphosisTemperature.setTemperature(player, Math.min(20, MetamorphosisTemperature.getTemperature(player)));
-        OriginSwapper.setOrigin(player, AddonLoader.originNameMap.get("drowned"), PlayerSwapOriginEvent.SwapReason.PLUGIN, false);
+        OriginSwapper.setOrigin(player, AddonLoader.getOrigin("drowned"), PlayerSwapOriginEvent.SwapReason.PLUGIN, false, "origin");
         player.sendMessage(Component.text("You have transformed into a drowned!")
                 .color(NamedTextColor.YELLOW));
     }
